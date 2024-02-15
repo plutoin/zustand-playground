@@ -2,27 +2,16 @@
 
 import React from "react";
 
-import { useCountStore } from "../../store/store";
-// import styled from "@emotion/styled";
+import Header from "@/app/components/Layout/Header";
+import Counter from "@/app/components/Count/Count";
 
 export default function Count() {
-  const { count, inc, dec } = useCountStore();
-
   return (
-    <section>
-      <h1>Count</h1>
-      <span>{count}</span>
-      <div>
-        <button onClick={inc}>one up</button>
-        <button onClick={dec}>one down</button>
-      </div>
-    </section>
+    <>
+      <Header />
+      <section className="flex flex-col justify-center items-center h-screen bg-stone-200">
+        <Counter />
+      </section>
+    </>
   );
 }
-
-// const Section = styled.section`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-// `;

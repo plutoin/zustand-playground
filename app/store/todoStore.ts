@@ -1,23 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
-interface CountStore {
-  count: number;
-  inc: () => void;
-  dec: () => void;
-}
-
-export const useCountStore = create<CountStore>()((set) => ({
-  count: 1,
-  inc: () => set((state) => ({ count: state.count + 1 })),
-  dec: () => set((state) => ({ count: state.count - 1 })),
-}));
-
-interface Todo {
-  id: number;
-  text: string;
-  isCompleted: boolean;
-}
+import { Todo } from "../types/type";
 
 interface TodoStore {
   todos: Todo[];
@@ -46,12 +30,14 @@ export const useTodoStore = create(
         set((state) => ({
           todos: state.todos.filter((item) => item.id !== todo.id),
         })),
-      editTodo: (todo: Todo) =>
+      editTodo: (todo: Todo) => {
         set((state) => ({
           todos: state.todos.map((item) =>
             item.id === todo.id ? { ...item, text: todo.text } : item
           ),
-        })),
+        }));
+      },
+
       completeTodo: (todo: Todo) =>
         set((state) => ({
           todos: state.todos.map((item) =>
@@ -59,6 +45,10 @@ export const useTodoStore = create(
               ? { ...item, isCompleted: !item.isCompleted }
               : item
           ),
+        })),
+      sortTodos: () =>
+        set((state) => ({
+          todos: [...state.todos].sort((a, b) => a.id - b.id),
         })),
     }),
     { name: "todo", storage: createJSONStorage(() => sessionStorage) }
