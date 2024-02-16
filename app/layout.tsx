@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 
 import "./styles/global.css";
 import "./styles/reset.css";
@@ -23,6 +24,7 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
         />
+        <Script rel="preload" src="https://cdn.tailwindcss.com" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
