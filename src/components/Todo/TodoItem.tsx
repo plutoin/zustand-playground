@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Todo } from "@/app/types/type";
+import { Todo } from "src/types/type";
 
-import CheckBox from "@/app/components/Todo/Checkbox";
+import CheckBox from "src/components/Todo/Checkbox";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-regular-svg-icons";

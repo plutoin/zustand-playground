@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useCounterStore } from "@/app/store/counterStore";
+import { useCounterStore } from "src/store/counterStore";
 
 export default function Counter() {
   const { count, inc, dec, reset } = useCounterStore();

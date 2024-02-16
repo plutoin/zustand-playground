@@ -1,10 +1,10 @@
 import React from "react";
 
-import CheckBox from "@/app/components/Todo/Checkbox";
+import CheckBox from "src/components/Todo/Checkbox";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
-import { Todo } from "@/app/types/type";
+import { Todo } from "src/types/type";
 
 interface TodoListProps {
   todos: Todo[];

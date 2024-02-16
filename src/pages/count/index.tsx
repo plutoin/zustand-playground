@@ -1,9 +1,7 @@
-"use client";
-
 import React from "react";
 
-import Header from "@/app/components/Layout/Header";
-import Counter from "@/app/components/Count/Count";
+import Header from "src/components/Layout/Header";
+import Counter from "src/components/Count/Count";
 
 export default function Count() {
   return (

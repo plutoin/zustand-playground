@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Todo } from "@/app/types/type";
+import { Todo } from "src/types/type";
 
 import TodoItem from "./TodoItem";
 

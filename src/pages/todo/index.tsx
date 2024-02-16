@@ -1,16 +1,14 @@
-"use client";
-
 import React, { useState } from "react";
 
-import { useTodoStore } from "@/app/store/todoStore";
+import { useTodoStore } from "src/store/todoStore";
 
-import { Todo } from "@/app/types/type";
+import { Todo } from "src/types/type";
 
-import Header from "@/app/components/Layout/Header";
-import AddTaskInput from "@/app/components/Todo/AddTaskInput";
-import TodoList from "@/app/components/Todo/TodoList";
-import TodoCount from "@/app/components/Todo/TodoCount";
-import CompletedTodoList from "@/app/components/Todo/CompletedTodoList";
+import Header from "src/components/Layout/Header";
+import AddTaskInput from "src/components/Todo/AddTaskInput";
+import TodoList from "src/components/Todo/TodoList";
+import TodoCount from "src/components/Todo/TodoCount";
+import CompletedTodoList from "src/components/Todo/CompletedTodoList";
 
 export default function Todo() {
   const [todo, setTodo] = useState<string>("");
